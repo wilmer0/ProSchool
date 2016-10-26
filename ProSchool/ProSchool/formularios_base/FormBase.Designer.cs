@@ -199,7 +199,8 @@
             this.MinimizeBox = false;
             this.Name = "FormBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IrisCont";
+            this.Text = "ProSchool";
+            this.Load += new System.EventHandler(this.FormBase_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

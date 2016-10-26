@@ -313,6 +313,12 @@
     <Folder Include="cuentas_por_pagar\" />
     <Folder Include="mysql\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProSchoolModelo\ProSchoolModelo.csproj">
+      <Project>{87998798-439d-4ae6-8074-34d7bdba620b}</Project>
+      <Name>ProSchoolModelo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

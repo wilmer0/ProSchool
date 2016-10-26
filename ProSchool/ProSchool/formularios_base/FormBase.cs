@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data.Entity;
 
 namespace ProSchool
 {
@@ -127,6 +129,11 @@ namespace ProSchool
         private void Panel2_Paint(object sender, PaintEventArgs e)
         {
             //panel para ocultar los controles que no quiero mostrar en los hijos en tiempo de diseño
+        }
+
+        private void FormBase_Load_1(object sender, EventArgs e)
+        {
+
         }
 
     }

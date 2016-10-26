@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="proschoolModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityType Name="estados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="activo" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="tercero">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="activo" Type="tinyint" />
+        </EntityType>
+        <Association Name="estado">
+          <End Role="estados" Type="Self.estados" Multiplicity="1" />
+          <End Role="tercero" Type="Self.tercero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tercero">
+              <PropertyRef Name="estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="proschoolModelStoreContainer">
+          <EntitySet Name="estados" EntityType="Self.estados" Schema="proschool" store:Type="Tables" />
+          <EntitySet Name="tercero" EntityType="Self.tercero" Schema="proschool" store:Type="Tables" />
+          <AssociationSet Name="estado" Association="Self.estado">
+            <End Role="estados" EntitySet="estados" />
+            <End Role="tercero" EntitySet="tercero" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="proschoolModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="estado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activo" Type="SByte" />
+          <NavigationProperty Name="terceroes" Relationship="Self.estado1" FromRole="estados" ToRole="tercero" />
+        </EntityType>
+        <EntityType Name="tercero">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="activo" Type="SByte" />
+          <NavigationProperty Name="estado" Relationship="Self.estado1" FromRole="tercero" ToRole="estados" />
+        </EntityType>
+        <Association Name="estado1">
+          <End Role="estados" Type="Self.estado" Multiplicity="1" />
+          <End Role="tercero" Type="Self.tercero" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="proschoolEntities">
+          <EntitySet Name="estados" EntityType="Self.estado" />
+          <EntitySet Name="terceroes" EntityType="Self.tercero" />
+          <AssociationSet Name="estado" Association="Self.estado1">
+            <End Role="estados" EntitySet="estados" />
+            <End Role="tercero" EntitySet="terceroes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="proschoolModelStoreContainer" CdmEntityContainer="proschoolEntities">
+          <EntitySetMapping Name="estados">
+            <EntityTypeMapping TypeName="proschoolModel.estado">
+              <MappingFragment StoreEntitySet="estados">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="terceroes">
+            <EntityTypeMapping TypeName="proschoolModel.tercero">
+              <MappingFragment StoreEntitySet="tercero">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="estado" TypeName="proschoolModel.estado1" StoreEntitySet="tercero">
+            <EndProperty Name="estados">
+              <ScalarProperty Name="id" ColumnName="estado" />
+            </EndProperty>
+            <EndProperty Name="tercero">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
