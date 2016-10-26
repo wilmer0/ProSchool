@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
-namespace puntoVenta.Sistema
+namespace ProSchool.Sistema
 {
     public partial class menu_principal : FormBase
     {
@@ -176,7 +176,7 @@ namespace puntoVenta.Sistema
         private void button12_Click(object sender, EventArgs e)
         {
             Form ventana=new Form();
-            Type tipoObjeto= Type.GetType("IrisContabilidad.Sistema.menu_principal");
+            Type tipoObjeto= Type.GetType("ProSchool.Sistema.menu_principal");
             Object objeto = Activator.CreateInstance(tipoObjeto);
             ventana = (Form)objeto;
             ventana.Show();            

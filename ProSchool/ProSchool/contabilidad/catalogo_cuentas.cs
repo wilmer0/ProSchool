@@ -1,4 +1,4 @@
-﻿using puntoVenta.Clases;
+﻿using ProSchool.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace puntoVenta.Contabilidad
+namespace ProSchool.Contabilidad
 {
     public partial class catalogo_cuentas : FormBase
     {

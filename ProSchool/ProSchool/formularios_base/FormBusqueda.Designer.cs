@@ -1,4 +1,4 @@
-﻿namespace puntoVenta.formularios_base
+﻿namespace ProSchool.formularios_base
 {
     partial class FormBusqueda
     {

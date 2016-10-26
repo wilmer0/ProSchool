@@ -1,4 +1,4 @@
-﻿using puntoVenta.formularios_base;
+﻿using ProSchool.formularios_base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace puntoVenta.Contabilidad
+namespace ProSchool.Contabilidad
 {
     public partial class busqueda_cuenta_contable : FormBusqueda
     {

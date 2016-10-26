@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace puntoVenta.formularios_base
+namespace ProSchool.formularios_base
 {
     public partial class FormBusqueda : Form
     {

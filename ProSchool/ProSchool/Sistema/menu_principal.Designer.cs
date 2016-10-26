@@ -1,4 +1,4 @@
-﻿namespace puntoVenta.Sistema
+﻿namespace ProSchool.Sistema
 {
     partial class menu_principal
     {

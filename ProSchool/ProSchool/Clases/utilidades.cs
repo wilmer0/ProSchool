@@ -6,13 +6,13 @@ using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Drawing.Design;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.IO;
 using System.Net.Mail;
 using System.Net;
 using System.Data;
+using MySql.Data.MySqlClient;
 
-namespace puntoVenta.Clases
+namespace ProSchool.Clases
 {
     public static class  utilidades
     {
@@ -203,12 +203,12 @@ namespace puntoVenta.Clases
         {
             try
             {
-                numero.ToString("###,###,###,###,###,###.#0");
-                return numero.ToString();
+                numero.ToString("N");
+                return numero.ToString("N");
             }
-            catch (Exception)
+            catch (Exception ex) 
             {
-                return "Error";
+                return "Error numero_miles.: "+ex.ToString();
             }
         }
         public static bool solo_letras(string cadena)

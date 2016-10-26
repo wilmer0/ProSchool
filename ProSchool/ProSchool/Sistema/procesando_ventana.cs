@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace puntoVenta.Sistema
+namespace ProSchool.Sistema
 {
     public partial class procesando_ventana : Form
     {
         public procesando_ventana()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

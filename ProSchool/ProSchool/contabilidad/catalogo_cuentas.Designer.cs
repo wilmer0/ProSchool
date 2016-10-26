@@ -1,4 +1,4 @@
-﻿namespace puntoVenta.Contabilidad
+﻿namespace ProSchool.Contabilidad
 {
     partial class catalogo_cuentas
     {

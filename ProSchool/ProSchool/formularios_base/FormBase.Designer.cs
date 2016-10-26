@@ -1,4 +1,4 @@
-﻿namespace puntoVenta
+﻿namespace ProSchool
 {
     partial class FormBase
     {

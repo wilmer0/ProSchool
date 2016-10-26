@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace puntoVenta
+namespace ProSchool
 {
     public partial class FormBase : Form
     {
