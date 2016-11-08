@@ -15,7 +15,7 @@ namespace ProSchool
 
 
         //objetos
-        Sistema.menu_principal ventana = new Sistema.menu_principal();
+        Sistema.menu_principal ventanaMenuPrincipal = new Sistema.menu_principal();
 
 
 
@@ -50,9 +50,38 @@ namespace ProSchool
         }
         public override void Procesar()
         {
-            ventana.Owner = this;
-            ventana.Show();
-            this.Hide();
+           //usar modelo para conectar y buscar si existe usuario
+        }
+
+
+        public override void Salir()
+        {
+            Application.Exit();
+        }
+
+        public override void limpiar()
+        {
+
+        }
+
+
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                //salir
+                Salir();
+            }
+            if (e.KeyData == Keys.F6)
+            {
+                //limpiar
+                limpiar();
+            }
+            if (e.KeyData == Keys.F8)
+            {
+                //procesar
+                Procesar();
+            }
         }
         
     }

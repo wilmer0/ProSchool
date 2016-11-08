@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>libro_y_manzana.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.ConnectorNET.Data.6.8.3.2\lib\net20\MySql.Data.dll</HintPath>
@@ -149,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\ProSchool.vshost.exe" />
+    <Content Include="libro_y_manzana.ico" />
     <Content Include="Resources\botones\rectangulares planos\boton1.png" />
     <Content Include="Resources\botones\rectangulares planos\boton2.png" />
     <Content Include="Resources\botones\rectangulares planos\boton3.png" />

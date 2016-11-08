@@ -55,40 +55,15 @@ namespace ProSchoolModelo
             {
                 datosConeccionBd = new DatosConeccionBD();
 
-                
+                // leer archivo
 
+                datosConeccionBd.Servidor = "localhost";
+                datosConeccionBd.BaseDatos = "ProSchool";
+                datosConeccionBd.Usuario = "root";
+                datosConeccionBd.Contrasena = "wilmerlomas1";
+                return new proschoolEntities(datosConeccionBd.Servidor, datosConeccionBd.BaseDatos,
+                    datosConeccionBd.Usuario, datosConeccionBd.Contrasena);
 
-                //         public ADMFICEntities(string servidor, String baseDatos, String user, String pass)
-                //    : base("name=ADMFICEntities")
-                //{
-
-
-                //    var connectionString = this.Database.Connection.ConnectionString + ";password=" + pass;
-                //    connectionString = "server=" + servidor + ";userid=" + user + ";persistsecurityinfo=true;database=" + baseDatos + ";password=" + pass;
-
-                //    this.Database.Connection.ConnectionString = connectionString;
-                //}
-
-                //        if (!System.IO.Directory.Exists("Configuracion"))
-                //        {
-
-                //            System.IO.Directory.CreateDirectory("Configuracion");
-
-                //        }
-
-              
-
-
-                //        // leer archivo
-
-                   
-                    datosConeccionBd.Servidor = "localhost";
-                    datosConeccionBd.BaseDatos = "7commercium";
-                    datosConeccionBd.Usuario = "migracion";
-                    datosConeccionBd.Contrasena = "1234";
-                    return new proschoolEntities(datosConeccionBd.Servidor, datosConeccionBd.BaseDatos,
-                        datosConeccionBd.Usuario, datosConeccionBd.Contrasena);
-               
             }
 
             else

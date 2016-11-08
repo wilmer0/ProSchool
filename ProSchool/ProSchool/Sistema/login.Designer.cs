@@ -86,10 +86,6 @@
             // 
             this.panel2.Size = new System.Drawing.Size(505, 37);
             // 
-            // button4
-            // 
-            
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +94,7 @@
             this.Name = "login";
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.login_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
